@@ -4,24 +4,11 @@ import Image from 'next/image'
 import Purse from "../../public/Front Pic.png"
 import React, { useEffect, useState } from 'react'
 
-const RhsProduct = ({ showFilter, setShowFilter , products, setProducts }) => {
+const RhsProduct = ({ showFilter, setShowFilter , products, setProducts, fetchData, loading }) => {
 
 
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then(res => res.json())
-      .then(json => {
-        console.log(json)
-        setProducts(json);
-        setLoading(false); 
-      })
-      .catch(error => {
-        console.log(error);
-        setLoading(false); 
-      });
-  }, []);
+  
 
   return (
     <div className={`${showFilter ? 'rhsfilter-container' : 'rhsfilter-container-4t'}`}>

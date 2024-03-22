@@ -6,7 +6,7 @@ import dropdown from "../../public/dropdown.svg"
 
 import React, { useState } from 'react'
 
-const FilteredHeadCombine = ({ showFilter, setShowFilter }) => {
+const FilteredHeadCombine = ({ showFilter, setShowFilter, products }) => {
 
 
     const [recommended, setRecommended] = useState(false)
@@ -20,7 +20,7 @@ const FilteredHeadCombine = ({ showFilter, setShowFilter }) => {
         <div className='mttop50px onehunwidth parentdivmainfilter'>
             <div className='filteredmain-champ filtered-heremain'>
                 <div className='left-side'>
-                    <span className='items-maincss font-w700'>3425 ITEMS</span>
+                    <span className='items-maincss font-w700'>{products.length} ITEMS</span>
                     <span className='doflexandalcenter'>
                         <Image src={leftdropdown} />
                         <span onClick={() => setShowFilter(!showFilter)} className='hide-filters-text'>{showFilter ? "HIDE FILTERS" : "SHOW FILTER"}</span>

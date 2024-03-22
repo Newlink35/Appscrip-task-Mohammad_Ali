@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import LhsFilter from './LhsFilter'
 import RhsProduct from './RhsProduct'
 
-const ProductCumFilter = ({showFilter , setShowFilter}) => {
-    const [products, setProducts] = useState([]);
+const ProductCumFilter = ({showFilter , setShowFilter, products, setProducts, fetchData, loading}) => {
 
 
     
@@ -13,9 +12,9 @@ const ProductCumFilter = ({showFilter , setShowFilter}) => {
 
             <div className=' child-produc-cum-filter filteredmain-champ'>
                 {
-                    showFilter && <LhsFilter products={products} setProducts={setProducts} />
+                    showFilter && <LhsFilter fetchData={fetchData} products={products} setProducts={setProducts} />
                 }
-                <RhsProduct  products={products} setProducts={setProducts} showFilter={showFilter} setShowFilter={setShowFilter}/>
+                <RhsProduct  products={products} setProducts={setProducts} showFilter={showFilter} setShowFilter={setShowFilter} fetchData={fetchData} loading={loading}/>
 
             </div>
 

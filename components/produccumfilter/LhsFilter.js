@@ -3,12 +3,13 @@ import dropdown from "../../public/dropdown.svg"
 import Image from 'next/image'
 
 
-const LhsFilter = ({ products, setProducts }) => {
+const LhsFilter = ({ products, setProducts, fetchData }) => {
 
   const [modal, setModal] = useState(false);
   const [checked, setIsChecked] = useState(false)
   const [womenchecked, setIsCheckedwomen] = useState(false)
   const [jewelry, setJewerly] = useState(false)
+  const [customize, setCustomize] = useState(false);
 
 
   function handleitsort(e) {
@@ -23,6 +24,8 @@ const LhsFilter = ({ products, setProducts }) => {
         return item.category === "men's clothing"
       })
       setProducts(sort)
+    }else{
+      fetchData();
     }
   }
 
@@ -33,17 +36,33 @@ const LhsFilter = ({ products, setProducts }) => {
         return item.category === "women's clothing"
       })
       setProducts(sort)
+    }else{
+      fetchData();
     }
   }
 
   function handejewelery() {
     setJewerly(!jewelry)
-    if (!womenchecked) {
+    if (!jewelry) {
       let sort = products.filter((item) => {
         return item.category === "jewelery"
       })
       setProducts(sort)
+    }else{
+      fetchData();
     }
+  }
+
+
+  function Customizable(){
+    setCustomize(!customize)
+    if(!customize){
+      let sort = products.sort((a,b)=>{
+        return b.price - a.price;
+      })
+      setProducts(sort);
+    }
+    
   }
 
 
@@ -56,7 +75,7 @@ const LhsFilter = ({ products, setProducts }) => {
 
       {/* cutomize filter part */}
       <div className='mobilerescenter postop20px group-lhs-customize'>
-        <input className='checkboxlhs' type='checkbox' />
+        <input checked={customize} onChange={Customizable} className='checkboxlhs' type='checkbox' />
         <label className='black-colormain font-w700 uppercase-it'>Customizable</label>
       </div>
 
@@ -86,16 +105,16 @@ const LhsFilter = ({ products, setProducts }) => {
             <span className='filtermenjust'>
               <label>Women</label>
               <input
-                checked = {womenchecked}
+                checked={womenchecked}
                 onChange={handelwomenchange}
-                 type='checkbox' />
+                type='checkbox' />
             </span>
 
             <span className='filtermenjust'>
               <label >Jewelery</label>
               <input checked={jewelry}
-              onChange={handejewelery} 
-              type='checkbox' />
+                onChange={handejewelery}
+                type='checkbox' />
             </span>
           </span>}
 
