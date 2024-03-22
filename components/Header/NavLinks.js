@@ -10,7 +10,7 @@ const NavLinks = () => {
 
         <div className='topNav_menu'>
           
-          <ul className='fntweight-700 child1navcomplinks uppercase-it'>
+          <ul className='hovereffectdone fntweight-700 child1navcomplinks uppercase-it'>
             <li>Shop</li>
             <li>skills</li>
             <li>stories</li>

@@ -4,10 +4,9 @@ import Image from 'next/image'
 import Purse from "../../public/Front Pic.png"
 import React, { useEffect, useState } from 'react'
 
-const RhsProduct = ({ showFilter, setShowFilter }) => {
+const RhsProduct = ({ showFilter, setShowFilter , products, setProducts }) => {
 
 
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

@@ -3,6 +3,17 @@
   padding: 0;
 }
 
+.filteredItemcehckbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.filtermenjust {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 /* This is reusable */
 .black-colormain {
@@ -238,6 +249,12 @@
   gap: 10px;
 }
 
+.flcolumnb {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
 
 /* This is reusable */
 .flcolumn {
@@ -248,6 +265,9 @@
 .lhsfilter-container {
   flex-grow: 25;
 }
+
+
+
 
 .rhsfilter-container {
   flex-grow: 9;
@@ -551,6 +571,22 @@
 }
 
 
+.cursor-notallowed {
+  cursor: not-allowed;
+}
+.curpointer{
+  cursor: pointer;
+}
+
+.hovereffectdone>li{
+  cursor: pointer;
+  &:hover{
+    color: red;
+  }
+}
+
+
+
 
 @media only screen and (max-width: 1200px) {
 
@@ -564,6 +600,10 @@
 
   .foronlymobile {
     display: block;
+    cursor: not-allowed;
+  }
+
+  .cursor-notallowed {
     cursor: not-allowed;
   }
 

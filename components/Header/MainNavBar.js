@@ -21,7 +21,7 @@ const MainNavBar = () => {
           <Image src={hamburg} alt='logo-image' />
         </div>
         <div>
-          <Image src={logo} alt='logo-image' />
+          <Image className='curpointer' src={logo} alt=' logo-image' />
         </div>
       </div>
 
@@ -31,18 +31,18 @@ const MainNavBar = () => {
 
       <div className='right-side-links'>
         <span>
-          <Image src={search} />
+          <Image className='curpointer' src={search} />
         </span>
         <span>
-          <Image src={heart} />
+          <Image className='curpointer' src={heart} />
         </span>
         <span>
-          <Image src={shopping} />
+          <Image className='curpointer' src={shopping} />
         </span>
         <span>
-          <Image src={profileImg} />
+          <Image className='curpointer' src={profileImg} />
         </span>
-        <span className='doflexandalcenter'>
+        <span  className='curpointer doflexandalcenter'>
           <Image src={ENG} />
           <Image src={DropDown} />
         </span>

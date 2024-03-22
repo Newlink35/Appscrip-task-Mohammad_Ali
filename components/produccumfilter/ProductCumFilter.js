@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LhsFilter from './LhsFilter'
 import RhsProduct from './RhsProduct'
 
 const ProductCumFilter = ({showFilter , setShowFilter}) => {
+    const [products, setProducts] = useState([]);
+
+
+    
+
     return (
         <div className='margintop10px parent-produc-cum-filter'>
 
             <div className=' child-produc-cum-filter filteredmain-champ'>
                 {
-                    showFilter && <LhsFilter />
+                    showFilter && <LhsFilter products={products} setProducts={setProducts} />
                 }
-                <RhsProduct showFilter={showFilter} setShowFilter={setShowFilter}/>
+                <RhsProduct  products={products} setProducts={setProducts} showFilter={showFilter} setShowFilter={setShowFilter}/>
 
             </div>
 

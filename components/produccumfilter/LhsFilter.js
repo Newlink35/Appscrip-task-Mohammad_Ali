@@ -1,9 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 import dropdown from "../../public/dropdown.svg"
 import Image from 'next/image'
 
 
-const LhsFilter = () => {
+const LhsFilter = ({ products, setProducts }) => {
+
+  const [modal, setModal] = useState(false);
+  const [checked, setIsChecked] = useState(false)
+  const [womenchecked, setIsCheckedwomen] = useState(false)
+  const [jewelry, setJewerly] = useState(false)
+
+
+  function handleitsort(e) {
+    e.preventDefault();
+    setModal(!modal)
+  }
+
+  function handecheckboxchange() {
+    setIsChecked(!checked)
+    if (!checked) {
+      let sort = products.filter((item) => {
+        return item.category === "men's clothing"
+      })
+      setProducts(sort)
+    }
+  }
+
+  function handelwomenchange() {
+    setIsCheckedwomen(!womenchecked)
+    if (!womenchecked) {
+      let sort = products.filter((item) => {
+        return item.category === "women's clothing"
+      })
+      setProducts(sort)
+    }
+  }
+
+  function handejewelery() {
+    setJewerly(!jewelry)
+    if (!womenchecked) {
+      let sort = products.filter((item) => {
+        return item.category === "jewelery"
+      })
+      setProducts(sort)
+    }
+  }
+
+
+
+
+
+
   return (
     <div className='lhsfilter-container'>
 
@@ -17,21 +64,49 @@ const LhsFilter = () => {
 
       {/* 1stidealfor */}
       <div className='for-filter-all-content'>
-        <span className='flcolumn elementpandb'>
+        <span onClick={handleitsort} className='flcolumnb elementpandb'>
           <span className='group-single-filter'>
-            <span className='font-w700'>Ideal for</span>
+            <span className='uppercase-it font-w700'>Ideal for</span>
             <span className='alignflex'>
               <Image src={dropdown} />
             </span>
           </span>
           <span>All</span>
+
+          {modal && <span onClick={(e) => e.stopPropagation()} className='filteredItemcehckbox'>
+            <span className='filtermenjust'>
+              <label>Men</label>
+              <input
+                checked={checked}
+                onChange={handecheckboxchange}
+                type='checkbox' />
+            </span>
+
+
+            <span className='filtermenjust'>
+              <label>Women</label>
+              <input
+                checked = {womenchecked}
+                onChange={handelwomenchange}
+                 type='checkbox' />
+            </span>
+
+            <span className='filtermenjust'>
+              <label >Jewelery</label>
+              <input checked={jewelry}
+              onChange={handejewelery} 
+              type='checkbox' />
+            </span>
+          </span>}
+
+
         </span>
 
 
 
         {/* 2ndoccassion */}
 
-        <span className='flcolumn elementpandb'>
+        <span className='cursor-notallowed flcolumn  elementpandb'>
           <span className='group-single-filter'>
             <span className='uppercase-it font-w700'>Occassion</span>
             <span className='alignflex'>
@@ -44,7 +119,7 @@ const LhsFilter = () => {
 
         {/* 3rd work */}
 
-        <span className='flcolumn elementpandb'>
+        <span className='cursor-notallowed flcolumn elementpandb'>
           <span className='group-single-filter'>
             <span className='uppercase-it font-w700'>work</span>
             <span className='alignflex'>
@@ -56,7 +131,7 @@ const LhsFilter = () => {
 
 
         {/* 4th fabric */}
-        <span className='flcolumn elementpandb'>
+        <span className='cursor-notallowed flcolumn elementpandb'>
           <span className='group-single-filter'>
             <span className='uppercase-it font-w700'>fabric</span>
             <span className='alignflex'>
@@ -68,7 +143,7 @@ const LhsFilter = () => {
 
         {/* 5thr for segment  */}
 
-        <span className='flcolumn elementpandb'>
+        <span className='cursor-notallowed flcolumn elementpandb'>
           <span className='group-single-filter'>
             <span className='uppercase-it font-w700'>segment</span>
             <span className='alignflex'>
@@ -81,7 +156,7 @@ const LhsFilter = () => {
 
         {/* 6th for suitable for  */}
 
-        <span className='flcolumn elementpandb'>
+        <span className='cursor-notallowed flcolumn elementpandb'>
           <span className='group-single-filter'>
             <span className='uppercase-it font-w700'>suitable for</span>
             <span className='alignflex'>
@@ -93,7 +168,7 @@ const LhsFilter = () => {
 
 
         {/* rawmaterial */}
-         <span className='flcolumn elementpandb'>
+        <span className='cursor-notallowed flcolumn elementpandb'>
           <span className='group-single-filter'>
             <span className='uppercase-it font-w700'>raw materials</span>
             <span className='alignflex'>
@@ -105,7 +180,7 @@ const LhsFilter = () => {
 
 
         {/* pattern */}
-        <span className='flcolumn elementpandb'>
+        <span className='cursor-notallowed flcolumn elementpandb'>
           <span className='group-single-filter'>
             <span className='uppercase-it font-w700'>patter</span>
             <span className='alignflex'>
