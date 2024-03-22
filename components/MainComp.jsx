@@ -6,10 +6,11 @@ import HeaderMain from './Header/HeaderMain'
 import CombinedDiv from './DiscoverContent/CombinedDiv'
 import FilteredHeadCombine from './FilteredHeading/FilteredHeadCombine'
 import ProductCumFilter from './produccumfilter/ProductCumFilter'
+import FooterMain from './FooterPart/FooterMain'
 
 const MainComp = () => {
 
-  const [showFilter, setShowFilter] = useState(true);
+  const [showFilter, setShowFilter] = useState(false);
 
 
   
@@ -29,6 +30,8 @@ const MainComp = () => {
       {/* for aside filter and right product */}
       <ProductCumFilter showFilter={showFilter} setShowFilter={setShowFilter}/>
 
+
+      <FooterMain />
     </div>
   )
 }

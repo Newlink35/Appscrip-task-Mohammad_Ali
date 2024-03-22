@@ -8,7 +8,7 @@ const LhsFilter = () => {
     <div className='lhsfilter-container'>
 
       {/* cutomize filter part */}
-      <div className='postop20px group-lhs-customize'>
+      <div className='mobilerescenter postop20px group-lhs-customize'>
         <input className='checkboxlhs' type='checkbox' />
         <label className='black-colormain font-w700 uppercase-it'>Customizable</label>
       </div>
@@ -33,7 +33,7 @@ const LhsFilter = () => {
 
         <span className='flcolumn elementpandb'>
           <span className='group-single-filter'>
-            <span className='font-w700'>Ideal for</span>
+            <span className='uppercase-it font-w700'>Occassion</span>
             <span className='alignflex'>
               <Image src={dropdown} />
             </span>
@@ -46,7 +46,7 @@ const LhsFilter = () => {
 
         <span className='flcolumn elementpandb'>
           <span className='group-single-filter'>
-            <span className='font-w700'>Ideal for</span>
+            <span className='uppercase-it font-w700'>work</span>
             <span className='alignflex'>
               <Image src={dropdown} />
             </span>
@@ -58,7 +58,7 @@ const LhsFilter = () => {
         {/* 4th fabric */}
         <span className='flcolumn elementpandb'>
           <span className='group-single-filter'>
-            <span className='font-w700'>Ideal for</span>
+            <span className='uppercase-it font-w700'>fabric</span>
             <span className='alignflex'>
               <Image src={dropdown} />
             </span>
@@ -70,7 +70,7 @@ const LhsFilter = () => {
 
         <span className='flcolumn elementpandb'>
           <span className='group-single-filter'>
-            <span className='font-w700'>Ideal for</span>
+            <span className='uppercase-it font-w700'>segment</span>
             <span className='alignflex'>
               <Image src={dropdown} />
             </span>
@@ -83,7 +83,7 @@ const LhsFilter = () => {
 
         <span className='flcolumn elementpandb'>
           <span className='group-single-filter'>
-            <span className='font-w700'>Ideal for</span>
+            <span className='uppercase-it font-w700'>suitable for</span>
             <span className='alignflex'>
               <Image src={dropdown} />
             </span>
@@ -95,7 +95,7 @@ const LhsFilter = () => {
         {/* rawmaterial */}
          <span className='flcolumn elementpandb'>
           <span className='group-single-filter'>
-            <span className='font-w700'>Ideal for</span>
+            <span className='uppercase-it font-w700'>raw materials</span>
             <span className='alignflex'>
               <Image src={dropdown} />
             </span>
@@ -107,7 +107,7 @@ const LhsFilter = () => {
         {/* pattern */}
         <span className='flcolumn elementpandb'>
           <span className='group-single-filter'>
-            <span className='font-w700'>Ideal for</span>
+            <span className='uppercase-it font-w700'>patter</span>
             <span className='alignflex'>
               <Image src={dropdown} />
             </span>
