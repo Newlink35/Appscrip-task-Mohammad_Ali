@@ -32,7 +32,7 @@ const FilteredHeadCombine = ({ showFilter, setShowFilter }) => {
                         e.stopPropagation()
                         setRecommended(!recommended)
                     }} className='rigt-side-filter'>
-                        <span className=' font-w700'>
+                        <span className='cursor-pointer-rec font-w700'>
                             RECOMMENDED
 
                         </span>
@@ -40,11 +40,11 @@ const FilteredHeadCombine = ({ showFilter, setShowFilter }) => {
                             <Image src={dropdown} />
                         </span>
                     </span>
-                    {recommended && <div className='positionabsolutemenu'>
+                    {recommended && <div  className=' positionabsolutemenu'>
                         <>
-                            <ul className='uppercase-it displaytextmain'>
-                                <h4 className='uppercase-it'>Recommended</h4>
-                                <div>
+                            <ul className='backgroundwhite uppercase-it displaytextmain'>
+                                <h4 className=' main-frame flex1grow uppercase-it'>Recommended</h4>
+                                <div className=' modalrec main-frame'>
                                     <li>Newest First</li>
                                     <li>Popular</li>
                                     <li>Price: High to low</li>
